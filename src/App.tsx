@@ -11,9 +11,9 @@ export type FilterValuesType = "all" | "active" | "completed";
 
 function App() {
     let dispatch = useDispatch();
-    let tasks = useSelector<RootReducerType, Array<TaskType>>(state => state.tasks);
+    // let tasks = useSelector<RootReducerType, Array<TaskType>>(state => state.tasks);
 
-    let filter = useSelector<RootReducerType, FilterValuesType>(state => state.filter);
+    // let filter = useSelector<RootReducerType, FilterValuesType>(state => state.filter);
     // let [filter, filterDispatch] = useReducer(FilterReducer,"all");
 
 
@@ -45,30 +45,30 @@ function App() {
     }
 
 
-    let tasksForTodolist = tasks;
+    // let tasksForTodolist = tasks;
+    //
+    // if (filter === "active") {
+    //     tasksForTodolist = tasks.filter(t => t.isDone === false);
+    // }
+    // if (filter === "completed") {
+    //     tasksForTodolist = tasks.filter(t => t.isDone === true);
+    // }
 
-    if (filter === "active") {
-        tasksForTodolist = tasks.filter(t => t.isDone === false);
-    }
-    if (filter === "completed") {
-        tasksForTodolist = tasks.filter(t => t.isDone === true);
-    }
-
-    function changeFilter(value: FilterValuesType) {
-        // filterDispatch(changeFilterAC(value))
-        dispatch(changeFilterAC(value));
-    }
+    // function changeFilter(value: FilterValuesType) {
+    //     // filterDispatch(changeFilterAC(value))
+    //     dispatch(changeFilterAC(value));
+    // }
 
 
     return (
         <div className="App">
             <Todolist title="What to learn"
-                      tasks={tasksForTodolist}
+                      // tasks={tasksForTodolist}
                       removeTask={removeTask}
-                      changeFilter={changeFilter}
+                      // changeFilter={changeFilter}
                       addTask={addTask}
                       changeTaskStatus={changeStatus}
-                      filter={filter}
+                      // filter={filter}
             />
         </div>
     );
